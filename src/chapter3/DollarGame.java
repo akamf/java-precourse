@@ -18,10 +18,42 @@ public class DollarGame {
     public static final int NICKEL_CENT_VALUE = 5;
     public static final int DIME_CENT_VALUE = 10;
     public static final int QUARTER_CENT_VALUE = 25;
+    public static final int DOLLAR_CENT_VALUE = 100;
 
     public static void main(String[] args) {
-        int totalValue, numPennies, numNickels, numDimes, numQuarters;
+        int totalValue = 0;
+        int numPennies, numNickels, numDimes, numQuarters;
+        String losingMessage;
         Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of pennies:\n>> ");
+        numPennies = scanner.nextInt();
+        totalValue += numPennies * PENNY_CENT_VALUE;
+
+        System.out.print("Enter the number of nickels:\n>> ");
+        numNickels = scanner.nextInt();
+        totalValue += numNickels * NICKEL_CENT_VALUE;
+
+        System.out.print("Enter the number of dimes:\n>> ");
+        numDimes = scanner.nextInt();
+        totalValue += numDimes * DIME_CENT_VALUE;
+
+        System.out.print("Enter the number of quarters:\n>> ");
+        numQuarters = scanner.nextInt();
+        totalValue += numQuarters * QUARTER_CENT_VALUE;
+
+        if (totalValue == DOLLAR_CENT_VALUE)
+            System.out.println("Congratulations, you win!");
+        else {
+            losingMessage = "Sorry, you lose! ";
+
+            if (totalValue < DOLLAR_CENT_VALUE)
+                losingMessage += String.format("You are %d cents under the dollar.", (DOLLAR_CENT_VALUE - totalValue));
+            else
+                losingMessage += String.format("You are %d cents over the dollar.", (totalValue - DOLLAR_CENT_VALUE));
+
+            System.out.println(losingMessage);
+        }
 
         scanner.close();
     }
