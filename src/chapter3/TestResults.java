@@ -3,14 +3,14 @@ package chapter3;
 import java.util.Scanner;
 
 public class TestResults {
+    private static final Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) {
         double score;
         char grade;
-        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter your test score:\n>> ");
-        score = scanner.nextDouble();
+        System.out.printf("Enter your test score:%n>> ");
+        score = SCANNER.nextDouble();
 
         if (score < 60)
             grade = 'F';
@@ -24,7 +24,7 @@ public class TestResults {
             grade = 'A';
 
         System.out.printf("Your grade is %s", grade);
-        scanner.close();
+        SCANNER.close();
     }
 
 }

@@ -3,13 +3,13 @@ package chapter3;
 import java.util.Scanner;
 
 public class GradeMessage {
+    private static final Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) {
         String grade, message;
-        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter your letter grade:\n>> ");
-        grade = scanner.next();
+        System.out.printf("Enter your letter grade:%n>> ");
+        grade = SCANNER.next();
 
         message = switch (grade.toUpperCase()) {
             case "A" -> "Excellent job!";
@@ -22,7 +22,7 @@ public class GradeMessage {
 
         System.out.println(message);
 
-        scanner.close();
+        SCANNER.close();
     }
 
 }
