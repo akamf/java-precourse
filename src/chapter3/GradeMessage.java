@@ -11,26 +11,14 @@ public class GradeMessage {
         System.out.print("Enter your letter grade:\n>> ");
         grade = scanner.next();
 
-        switch (grade.toUpperCase()) {
-            case "A":
-                message = "Excellent job!";
-                break;
-            case "B":
-                message = "Great job!";
-                break;
-            case "C":
-                message = "Good job!";
-                break;
-            case "D":
-                message = "You need to work a little harder!";
-                break;
-            case "F":
-                message = "Uh oh!";
-                break;
-            default:
-                message = "Error! Invalid grade";
-                break;
-        }
+        message = switch (grade.toUpperCase()) {
+            case "A" -> "Excellent job!";
+            case "B" -> "Great job!";
+            case "C" -> "Good job!";
+            case "D" -> "You need to work a little harder!";
+            case "F" -> "Uh oh!";
+            default -> "Error! Invalid grade";
+        };
 
         System.out.println(message);
 
