@@ -23,39 +23,29 @@ public class DollarGame {
 
     public static void main(String[] args) {
         int totalValue = 0;
-        int numPennies, numNickels, numDimes, numQuarters;
-        String losingMessage;
 
-        System.out.print("Enter the number of pennies:\n>> ");
-        numPennies = SCANNER.nextInt();
-        totalValue += numPennies * PENNY_CENT_VALUE;
-
-        System.out.print("Enter the number of nickels:\n>> ");
-        numNickels = SCANNER.nextInt();
-        totalValue += numNickels * NICKEL_CENT_VALUE;
-
-        System.out.print("Enter the number of dimes:\n>> ");
-        numDimes = SCANNER.nextInt();
-        totalValue += numDimes * DIME_CENT_VALUE;
-
-        System.out.print("Enter the number of quarters:\n>> ");
-        numQuarters = SCANNER.nextInt();
-        totalValue += numQuarters * QUARTER_CENT_VALUE;
+        totalValue += getCoinCount("pennies") * PENNY_CENT_VALUE;
+        totalValue += getCoinCount("nickels") * NICKEL_CENT_VALUE;
+        totalValue += getCoinCount("dimes") * DIME_CENT_VALUE;
+        totalValue += getCoinCount("quarters") * QUARTER_CENT_VALUE;
 
         if (totalValue == DOLLAR_CENT_VALUE)
             System.out.println("Congratulations, you win!");
         else {
-            losingMessage = "Sorry, you lose! ";
+            int difference = Math.abs(DOLLAR_CENT_VALUE - totalValue);
 
-            if (totalValue < DOLLAR_CENT_VALUE)
-                losingMessage += String.format("You are %d cents under the dollar.", (DOLLAR_CENT_VALUE - totalValue));
-            else
-                losingMessage += String.format("You are %d cents over the dollar.", (totalValue - DOLLAR_CENT_VALUE));
-
-            System.out.println(losingMessage);
+            String message = (totalValue < DOLLAR_CENT_VALUE) ?
+                String.format("You are %d cents under the dollar.", difference) :
+                String.format("You are %d cents over the dollar.", difference);
+            System.out.println("Sorry, you lose! " + message);
         }
 
         SCANNER.close();
+    }
+
+    private static int getCoinCount(String coinType) {
+        System.out.printf("Enter the number of %s:%n>> ", coinType);
+        return SCANNER.nextInt();
     }
 
 }
