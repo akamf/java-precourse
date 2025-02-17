@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class GrossPayCalculator {
 
-    public static void main(String arg[]) {
+    public static void main(String[] args) {
         System.out.print("Enter the number of hours the employee worked:\n>> ");
         Scanner scanner = new Scanner(System.in);
         int hoursWorked = scanner.nextInt();

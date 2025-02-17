@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MadLibs {
 
-    public static void main(String[] arg) {
+    public static void main(String[] args) {
         String seasonOfTheYear, adjective;
         int wholeNumber;
         Scanner scanner = new Scanner(System.in);
