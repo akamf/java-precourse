@@ -15,7 +15,7 @@ public class SalaryCalculator {
         System.out.print("How many sales did the employee make this week?\n>> ");
         totalSales = scanner.nextInt();
 
-        if (totalSales >= BONUS_THRESHOLD) {
+        if (totalSales > BONUS_THRESHOLD) {
             salary += SALES_BONUS;
         }
 
