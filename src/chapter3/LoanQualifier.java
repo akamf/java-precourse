@@ -2,7 +2,7 @@ package chapter3;
 
 import java.util.Scanner;
 
-public class LoanQualifer {
+public class LoanQualifier {
     public static final int REQUIRED_SALARY = 30_000;
     public static final int REQUIRED_YEARS_EMPLOYED = 2;
 
