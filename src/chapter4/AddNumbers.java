@@ -19,7 +19,7 @@ public class AddNumbers {
 
             sum = num1 + num2;
             System.out.printf(
-                "The sum of %f and %f is %f. Do you want to run again? (Y/N)%n>> ",
+                "The sum of %.2f and %.2f is %.2f. Do you want to run again? (Y/N)%n>> ",
                 num1, num2, sum
             );
             inputChar = SCANNER.next();
