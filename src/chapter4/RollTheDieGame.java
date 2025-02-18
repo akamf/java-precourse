@@ -23,8 +23,15 @@ import java.util.Random;
 public class RollTheDieGame {
     public static final Random RANDOM = new Random();
 
+    public static final int BOARD_LIMIT = 20;
+    public static final int MAX_ROLLS = 5;
+
     public static void main(String[] args) {
-        System.out.println(rollDice());
+        int currentSpace = 0;
+
+        for (int i = 0; i < MAX_ROLLS; i++) {
+            System.out.printf("Roll #%d: %d %n", (i+1), rollDice());
+        }
     }
 
     public static int rollDice() {
