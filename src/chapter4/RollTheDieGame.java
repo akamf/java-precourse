@@ -30,7 +30,28 @@ public class RollTheDieGame {
         int currentSpace = 0;
 
         for (int i = 0; i < MAX_ROLLS; i++) {
-            System.out.printf("Roll #%d: %d %n", (i+1), rollDice());
+            int diceValue = rollDice();
+            System.out.printf("You roll a %d %n", diceValue);
+            currentSpace += diceValue;
+
+            if (currentSpace == BOARD_LIMIT) {
+                System.out.println("Congratulations! YOU WIN!");
+                break;
+            }
+            else if (currentSpace > BOARD_LIMIT) {
+                System.out.println("You advanced outside the board. YOU LOSE!");
+                break;
+            }
+            else {
+                System.out.printf(
+                    "You advanced to space %d and have %d more spaces to win. %n",
+                    currentSpace, (BOARD_LIMIT - currentSpace)
+                );
+            }
+        }
+
+        if (currentSpace < BOARD_LIMIT) {
+            System.out.println("YOU LOSE! You're out of dice rolls.");
         }
     }
 
