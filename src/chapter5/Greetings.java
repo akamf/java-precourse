@@ -8,8 +8,16 @@ public class Greetings {
     public static void main(String[] args) {
         String name;
 
+        System.out.printf("Enter your name:%n>> ");
+        name = SCANNER.next();
+
+        greet(name);
 
         SCANNER.close();
+    }
+
+    public static void greet(String inputName) {
+        System.out.printf("Hello %s!", inputName);
     }
 
 }
