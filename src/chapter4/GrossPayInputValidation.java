@@ -13,7 +13,7 @@ public class GrossPayInputValidation {
         System.out.printf("How many hours did you work this week?%n>> ");
         hoursWorked = SCANNER.nextDouble();
 
-        while (hoursWorked <= 1 || hoursWorked > MAX_WEEKLY_WORK_HOURS) {
+        while (hoursWorked < 1 || hoursWorked > MAX_WEEKLY_WORK_HOURS) {
             System.out.printf("Invalid entry. Your hours must between 1 and 40. Try again!%n>> ");
             hoursWorked = SCANNER.nextDouble();
         }
