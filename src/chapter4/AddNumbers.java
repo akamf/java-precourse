@@ -7,8 +7,8 @@ public class AddNumbers {
 
     public static void main(String[] args) {
         double num1, num2, sum;
-        boolean runAgain = false;
-        String inputChar = "N";
+        boolean runAgain;
+        String inputChar;
 
         do {
             System.out.printf("Enter the first number:%n>> ");
