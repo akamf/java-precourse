@@ -6,31 +6,30 @@ public class InstantCreditCheck {
     public static final int REQUIRED_SALARY = 25_000;
     public static final int REQUIRED_CREDIT_SCORE = 700;
 
-    static int creditScore = 0;
-    static double salary = 0;
+    public static final Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) {
-        getFormData();
+        double salary = getSalary();
+        int creditScore = getCreditScore();
 
-        if (isUserQualified())
+        if (isUserQualified(creditScore, salary))
             System.out.println("Congratulations! You qualify for a loan.");
         else
             System.out.println("Sorry! You don't qualify.");
+
+        SCANNER.close();
     }
 
-    public static void getFormData() {
-        Scanner scanner = new Scanner(System.in);
-
+    public static double getSalary() {
         System.out.printf("Enter your salary:%n>> ");
-        salary = scanner.nextDouble();
-
+        return SCANNER.nextDouble();
+    }
+    public static int getCreditScore() {
         System.out.printf("Enter your credit score:%n>> ");
-        creditScore = scanner.nextInt();
-
-        scanner.close();
+        return SCANNER.nextInt();
     }
 
-    public static boolean isUserQualified() {
+    public static boolean isUserQualified(int creditScore, double salary) {
         return (creditScore >= REQUIRED_CREDIT_SCORE && salary >= REQUIRED_SALARY);
     }
 }
