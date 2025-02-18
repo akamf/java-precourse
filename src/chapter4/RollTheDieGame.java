@@ -1,5 +1,7 @@
 package chapter4;
 
+import java.util.Random;
+
 /*
     The objective of this game is to travel the entire game board of 20 spaces within 5 die rolls.
 
@@ -19,9 +21,14 @@ package chapter4;
 */
 
 public class RollTheDieGame {
+    public static final Random RANDOM = new Random();
 
     public static void main(String[] args) {
-
+        System.out.println(rollDice());
     }
-    
+
+    public static int rollDice() {
+        return RANDOM.nextInt(6) + 1;
+    }
+
 }
