@@ -6,7 +6,8 @@ public class Cashier {
     public static final Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) {
-        int quantity = 0;
+        int quantity;
+        double price;
         double total = 0.0;
 
         System.out.printf("Enter the number of items you would like to scan:%n>> ");
@@ -14,7 +15,7 @@ public class Cashier {
 
         for (int i = 0; i < quantity; i++) {
             System.out.printf("Enter the cost of the item:%n>> ");
-            double price = SCANNER.nextDouble();
+            price = SCANNER.nextDouble();
 
             total += price;
         }
