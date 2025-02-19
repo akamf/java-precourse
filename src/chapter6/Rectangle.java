@@ -36,6 +36,6 @@ public class Rectangle {
     }
 
     public double calculateArea() {
-        return  length + width;
+        return  length * width;
     }
 }
