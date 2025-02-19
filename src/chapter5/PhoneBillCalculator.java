@@ -17,8 +17,8 @@ package chapter5;
 import java.util.Scanner;
 
 public class PhoneBillCalculator {
-    private static final double OVERAGE_RATE = 0.25;  // Kostnad per extra minut
-    private static final double TAX_RATE = 0.15;      // Skattesats (15%)
+    private static final double OVERAGE_RATE = 0.25;
+    private static final double TAX_RATE = 0.15;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
