@@ -1,6 +1,7 @@
 package chapter7;
 
 import java.util.Random;
+import java.util.HashSet;
 
 public class LotteryTicket {
     private static final int LOTTERY_NUMBERS = 6;
@@ -10,17 +11,24 @@ public class LotteryTicket {
 
     public LotteryTicket() {
         this.numbers  = new int[LOTTERY_NUMBERS];
-        generateNumbers();
+        generateUniqueNumbers();
     }
 
-    private void generateNumbers() {
+    private void generateUniqueNumbers() {
         Random rand = new Random();
-        for (int i = 0; i < LOTTERY_NUMBERS; i++)
-            numbers[i] = rand.nextInt(MAX_NUMBER) + 1;
+        HashSet<Integer> uniqueNumbers = new HashSet<>();
+
+        int index = 0;
+        while (uniqueNumbers.size() < LOTTERY_NUMBERS) {
+            int newNumber = rand.nextInt(MAX_NUMBER) + 1;
+            if (uniqueNumbers.add(newNumber)) {
+                numbers[index++] = newNumber;
+            }
+        }
     }
 
     public int[] getNumbers() {
-        return numbers;
+        return numbers.clone();
     }
 
     public int getNumberFromIndex(int index) {
