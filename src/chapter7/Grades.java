@@ -35,7 +35,7 @@ public class Grades {
     }
 
     public double calculateAverage() {
-        return calculateSum() / grades.length;
+        return (double) calculateSum() / grades.length;
     }
 
     public void printGrades() {
