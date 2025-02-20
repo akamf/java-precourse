@@ -14,6 +14,28 @@ public class Grades {
         return grades.clone();
     }
 
+    public int getHighestGrade() {
+        int high = grades[0];
+
+        for (int grade : grades) {
+            if (grade > high)
+                high = grade;
+        }
+
+        return high;
+    }
+
+    public int getLowestGrade() {
+        int low = grades[0];
+
+        for (int grade : grades) {
+            if (grade < low)
+                low = grade;
+        }
+
+        return low;
+    }
+
     public void addGrades() {
         Scanner scanner = new Scanner(System.in);
 
@@ -28,7 +50,7 @@ public class Grades {
     public int calculateSum() {
         int sum = 0;
 
-        for (int grade : getGrades())
+        for (int grade : grades)
             sum += grade;
 
         return sum;
@@ -39,10 +61,9 @@ public class Grades {
     }
 
     public void printGrades() {
-        System.out.println("Your grades:");
-        for (int number : this.getGrades()) {
-            System.out.print(number + " ");
-        }
-        System.out.printf("%nAverage: %.2f %n", calculateAverage());
+        System.out.printf("%nYou have submitted %d grades.%n", grades.length);
+        System.out.printf("Your highest grade: %d%n", getHighestGrade());
+        System.out.printf("Your lowest grade: %d%n", getLowestGrade());
+        System.out.printf("Average: %.2f %n", calculateAverage());
     }
 }
