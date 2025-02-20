@@ -23,7 +23,14 @@ public class LotteryTicket {
         return numbers;
     }
 
-    public int gettNumberFromIndex(int index) {
+    public int getNumberFromIndex(int index) {
         return numbers[index];
+    }
+
+    public void printNumbers() {
+        System.out.println("Your lottery numbers:");
+        for (int number : this.getNumbers()) {
+            System.out.print(number + " ");
+        }
     }
 }
