@@ -6,7 +6,8 @@ public class ChapterThreeMain {
         //DollarGame.run();
         IncomeAndLoanManager manager = new IncomeAndLoanManager();
         manager.calculateSalary();
-        manager.print();
+        manager.print(IncomeAndLoanManager.Category.SALARY);
+        manager.print(IncomeAndLoanManager.Category.LOAN);
         manager.close();
     }
 }
