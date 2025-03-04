@@ -3,20 +3,17 @@ package chapter2;
 import java.util.Scanner;
 
 public class GrossPayCalculator {
-
-    public static void main(String[] args) {
-        System.out.print("Enter the number of hours the employee worked:\n>> ");
+    public static double calculate() {
         Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of hours the employee worked:\n>> ");
         int hoursWorked = scanner.nextInt();
 
-        System.out.print("Enter the employees pay rate:\n>> ");
+        System.out.print("Enter the employee's pay rate:\n>> ");
         double payRate = scanner.nextDouble();
 
-        double grossPay = hoursWorked * payRate;
-
-        System.out.print("The employee's gross pay is: $" + grossPay);
-
         scanner.close();
-    }
 
+        return hoursWorked * payRate;
+    }
 }
