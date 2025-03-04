@@ -50,7 +50,7 @@ public class DollarGame {
     }
 
     private static int getCoinCount(Scanner scanner, String coinType) {
-        System.out.printf("Enter the number of %s:%n>> ", coinType);
+        System.out.printf("Enter the number of %s:\n>> ", coinType);
         return scanner.nextInt();
     }
 
