@@ -2,7 +2,9 @@ package chapter8;
 
 public class TextProcessor {
     public static void main(String[] args) {
-        countWords("Andreas Kamf SALT Java Fullstack Program Spring 2025");
+        String exampleText = "Andreas Kamf SALT Java Fullstack Program Spring 2025";
+        countWords(exampleText);
+        reverseString(exampleText);
     }
 
     public static void countWords(String text) {
@@ -14,5 +16,10 @@ public class TextProcessor {
 
         for (int i = 0; i < numberOfWords; i++)
             System.out.println(words[i]);
+    }
+
+    public static void reverseString(String text) {
+        for (int i = text.length() - 1; i >= 0; i--)
+            System.out.print(text.charAt(i));
     }
 }
