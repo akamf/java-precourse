@@ -6,7 +6,12 @@ public class Person {
     private String gender;
 
     public Person() {
-        System.out.println("Inside Person constructor");
+        System.out.println("Inside Person default constructor" + " : Name: " + this.name);
+    }
+
+    public Person(String name) {
+        this.name = name;
+        System.out.println("Inside Person overloaded constructor" + " : Name: " + this.name);
     }
 
     public String getName() {
