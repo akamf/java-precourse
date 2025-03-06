@@ -1,6 +1,10 @@
 package chapter9;
 
 public class Person {
+    private String name;
+    private int age;
+    private String gender;
+    
     public String getName() {
         return name;
     }
@@ -24,9 +28,5 @@ public class Person {
     public void setGender(String gender) {
         this.gender = gender;
     }
-
-    private String name;
-    private int age;
-    private String gender;
 
 }
