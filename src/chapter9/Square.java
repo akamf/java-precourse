@@ -6,4 +6,8 @@ public class Square extends Rectangle {
     public double calculatePerimeter() {
         return sides * length;
     }
+
+    public void print(String shape) {
+        System.out.println("This is a " + shape);
+    }
 }
