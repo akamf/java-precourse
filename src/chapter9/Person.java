@@ -5,6 +5,10 @@ public class Person {
     private int age;
     private String gender;
 
+    public Person() {
+        System.out.println("Inside Person constructor");
+    }
+
     public String getName() {
         return name;
     }
