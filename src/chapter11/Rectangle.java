@@ -28,6 +28,6 @@ public class Rectangle extends Shape {
 
     @Override
     double calculateArea() {
-        return 0;
+        return length * width;
     }
 }
