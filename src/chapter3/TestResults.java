@@ -3,16 +3,13 @@ package chapter3;
 import java.util.Scanner;
 
 public class TestResults {
-    private static double score;
-    private static char grade;
-
     public static void getTestResult() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.printf("Enter your test score:%n>> ");
-        score = scanner.nextDouble();
+        double score = scanner.nextDouble();
 
-        grade = getGrade(score);
+        char grade = getGrade(score);
         String message = getGradeMessage(grade);
 
         System.out.printf("Your grade is %s. %s\n", grade, message);
