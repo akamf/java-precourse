@@ -7,8 +7,8 @@ public class TestResults {
         Scanner scanner = new Scanner(System.in);
 
         System.out.printf("Enter your test score:%n>> ");
+        
         double score = scanner.nextDouble();
-
         char grade = getGrade(score);
         String message = getGradeMessage(grade);
 
