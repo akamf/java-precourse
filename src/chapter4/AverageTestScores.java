@@ -3,9 +3,9 @@ package chapter4;
 import java.util.Scanner;
 
 public class AverageTestScores {
-    public static final Scanner SCANNER = new Scanner(System.in);
+     public static void calculateScores() {
+        Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
         int numberOfStudents = 24;
         int numberOfTests = 4;
 
@@ -15,7 +15,7 @@ public class AverageTestScores {
 
             for (int j = 0; j < numberOfTests; j++) {
                 System.out.printf("Enter the score for test #%d:%n>> ", (j+1));
-                double score = SCANNER.nextDouble();
+                double score = scanner.nextDouble();
                 total += score;
             }
 
@@ -23,6 +23,6 @@ public class AverageTestScores {
             System.out.printf("Average score for student #%d is %.2f. %n%n", (i+1), average);
         }
 
-        SCANNER.close();
+        scanner.close();
     }
 }
