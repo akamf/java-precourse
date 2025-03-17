@@ -6,27 +6,57 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link href="style.css" rel="stylesheet">
+
+        <script>
+            document.title = "A Saltier title";
+        </script>
+
+        <script src="functions.js"></script>
+
     </head>
     <body>
-        <a href="https://salt.study"><img src="assets/images/saltlogo-dark.015d7a3f.svg" /></a>
-        <h1>Transform Your Career with SALT</h1>
-        <div>
-            <h3>Why study at SALT?</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, debitis.</p>
-            <p>Cum, ullam obcaecati porro explicabo modi soluta facere molestiae tempora?</p>
-            <p>Magni perspiciatis, blanditiis excepturi quo ut inventore ex hic nemo.</p>
-        </div>
-        <div>
-            <h3>Benefits from study at SALT</h3>
-            <ul>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, debitis.</li>
-                <li>Cum, ullam obcaecati porro explicabo modi soluta facere molestiae tempora?</li>
-                <li>Magni perspiciatis, blanditiis excepturi quo ut inventore ex hic nemo</li>
-            </ul>
-        </div>
-        <div>
-            <a href="https://salt.study"><p>Come study today!</p></a>
-            <img src="https://media.giphy.com/media/9V5ss6V5tCgIOSk5zH/giphy.gif" />
-        </div>
+        <main>
+            <a href="https://salt.study"><img src="assets/images/saltlogo-dark.015d7a3f.svg" /></a>
+            <h1>Transform Your Career with SALT</h1>
+            <div name="content" class="big bold bright">
+                <h3>Why study at SALT?</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, debitis.</p>
+                <p>Cum, ullam obcaecati porro explicabo modi soluta facere molestiae tempora?</p>
+                <p>Magni perspiciatis, blanditiis excepturi quo ut inventore ex hic nemo.</p>
+            </div>
+            <div class="big bold" id="companyName">
+                <h3>Benefits from study at SALT</h3>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, debitis.</li>
+                    <li>Cum, ullam obcaecati porro explicabo modi soluta facere molestiae tempora?</li>
+                    <li>Magni perspiciatis, blanditiis excepturi quo ut inventore ex hic nemo</li>
+                </ul>
+            </div>
+            <div name="content" class="big">
+                <a href="https://salt.study"><p>Come study today!</p></a>
+                <img src="https://media.giphy.com/media/9V5ss6V5tCgIOSk5zH/giphy.gif" />
+            </div>
+        </main>
+        <script>
+            const companyName = myFunctions.getCompanyName();
+            document.getElementById("companyName").innerHTML = companyName;
+
+            const boldNodes = document.getElementsByClassName("bold");
+
+            for (let i = 0; i < boldNodes.length; i++) {
+              boldNodes[i].innerHTML += " ... and bold";
+            }
+
+            const companyNameElement = document.querySelector("#companyName");
+            companyNameElement.innerHTML =
+              companyName + " set using a query selector by id";
+
+            const boldNodesQuerySelected = document.querySelectorAll(".bold");
+            for (let i = 0; i < boldNodes.length; i++) {
+              boldNodes[i].innerHTML += " ... and bold selected with query";
+            }
+
+            addListInMain(10);
+        </script>
     </body>
-</html>
+    </html>
