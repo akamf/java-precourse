@@ -8,3 +8,8 @@ div {
     border: 2px solid;
     border-radius: 50px;
 }
+.mainTitle {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 45px;
+    color: #B2BEB5;
+}
