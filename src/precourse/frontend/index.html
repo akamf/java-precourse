@@ -44,8 +44,12 @@
             addListInMain(10);
             removeDivById("companyName");
         </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", aFunctionToRunLater);
-    </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", aFunctionToRunLater);
+            document.addEventListener("DOMContentLoaded", () => {
+                const mainElement = document.querySelector("main");
+                getUsers(mainElement);
+            });
+        </script>
     </body>
     </html>
