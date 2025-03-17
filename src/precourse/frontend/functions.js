@@ -17,3 +17,10 @@ function addListInMain(numberOfListItems) {
   const main = document.querySelector("main");
   main.appendChild(ulElement);
 }
+
+function removeDivById(id) {
+  const divToRemove = document.querySelector("div#" + id);
+  if (divToRemove != undefined) {
+    divToRemove.remove();
+  }
+}

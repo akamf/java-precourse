@@ -41,22 +41,8 @@
             const companyName = myFunctions.getCompanyName();
             document.getElementById("companyName").innerHTML = companyName;
 
-            const boldNodes = document.getElementsByClassName("bold");
-
-            for (let i = 0; i < boldNodes.length; i++) {
-              boldNodes[i].innerHTML += " ... and bold";
-            }
-
-            const companyNameElement = document.querySelector("#companyName");
-            companyNameElement.innerHTML =
-              companyName + " set using a query selector by id";
-
-            const boldNodesQuerySelected = document.querySelectorAll(".bold");
-            for (let i = 0; i < boldNodes.length; i++) {
-              boldNodes[i].innerHTML += " ... and bold selected with query";
-            }
-
             addListInMain(10);
+            removeDivById("companyName");
         </script>
     </body>
     </html>
