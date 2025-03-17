@@ -4,7 +4,7 @@ myFunctions = {
   },
 };
 
-function addListInMain(numberOfListItems) {
+const addListInMain = (numberOfListItems) => {
   const ulElement = document.createElement("ul");
 
   for (let i = 0; i < numberOfListItems; i++) {
@@ -18,7 +18,7 @@ function addListInMain(numberOfListItems) {
   main.appendChild(ulElement);
 }
 
-function removeDivById(id) {
+const removeDivById = (id) => {
   const divToRemove = document.querySelector("div#" + id);
   if (divToRemove != undefined) {
     divToRemove.remove();
