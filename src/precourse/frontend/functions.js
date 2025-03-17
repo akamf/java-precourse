@@ -24,3 +24,7 @@ function removeDivById(id) {
     divToRemove.remove();
   }
 }
+
+const aFunctionToRunLater = () => {
+  console.log("Document is loaded, y'all");
+};
